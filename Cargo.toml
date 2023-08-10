@@ -1,0 +1,15 @@
+[package]
+name = "wasm4-tracker"
+version = "0.1.0"
+authors = ["Denis BOURGE <Srynetix@users.noreply.github.com>"]
+edition = "2021"
+
+[dependencies]
+wasm4-sx = { git = "https://github.com/Srynetix/wasm4-sx.git", features = ["serde"] }
+wasm4-stubs = { git = "https://github.com/Srynetix/wasm4-sx.git" }
+
+byteorder = "1.4.3"
+clap = { version = "4.3.21", features = ["derive"] }
+serde_yaml = { version = "0.9.25" }
+thiserror = "1"
+serde = { version = "1.0.183", features = ["derive"] }

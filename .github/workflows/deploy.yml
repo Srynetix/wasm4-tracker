@@ -1,0 +1,30 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    env:
+      CARGO_TERM_COLOR: always
+
+    steps:
+      - uses: extractions/setup-just@v1
+      - uses: Swatinem/rust-cache@v2
+      - run: |
+          cargo doc --no-deps
+          mkdir -p exports && cp -r ./target/doc/* ./exports
+
+      - name: Deploy to GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages
+          folder: exports
