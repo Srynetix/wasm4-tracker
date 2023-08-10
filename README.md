@@ -3,6 +3,8 @@
 Build music for the WASM-4 using code or a YAML file. Generates a binary blob to be parsed with [wasm4-sx]'s [TrackReader].  
 It's a work in progress.
 
+**:book: [Read the documentation here!](https://srynetix.github.io/wasm4-tracker/wasm4_tracker/)**
+
 ## Sample
 
 Here is a sample as a YAML file.
