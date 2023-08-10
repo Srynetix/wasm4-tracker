@@ -13,7 +13,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - run: rustup toolchain install stable --profile minimal --target wasm32-unknown-unknown
       - uses: extractions/setup-just@v1
       - uses: Swatinem/rust-cache@v2
       - run: just ci

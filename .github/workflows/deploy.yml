@@ -20,9 +20,8 @@ jobs:
       - uses: extractions/setup-just@v1
       - uses: Swatinem/rust-cache@v2
       - run: |
-          cargo doc --no-deps
+          cargo doc
           mkdir -p exports && cp -r ./target/doc/* ./exports
-
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
